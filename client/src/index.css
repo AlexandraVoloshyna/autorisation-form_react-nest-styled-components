@@ -1,0 +1,15 @@
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing:border-box;
+  font-family: Merriweather;
+  font-weight: 400;
+  font-size: 16px;
+  
+}
+a{
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
