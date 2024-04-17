@@ -5,7 +5,7 @@ import { RootState } from "./store";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ 
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://zenbit-server.onrender.com",
     credentials: "include",
     prepareHeaders: (headers, { getState }) => {
       const state = getState() as RootState;
