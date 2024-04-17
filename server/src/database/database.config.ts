@@ -11,7 +11,7 @@ export class DatabaseConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: "postgres",
-      url: this.configService.get<string>("DB_URl"),
+      url: this.configService.get<string>("DB_URL"),
       synchronize: true,
       entities: [Card, User],
     };
