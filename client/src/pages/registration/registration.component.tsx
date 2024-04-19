@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 import { authValidation } from "../../validation";
 import { isErrorWithMessage, isFetchBaseQueryError } from "../../helpers";
 export const RegistrationPage = () => {
-  const [register] = useRegistrationMutation()
+  const [register, {isLoading}] = useRegistrationMutation()
   const navigate = useNavigate()
   const handleRegistration = async (values: IUser) => {
     try {
@@ -50,10 +50,12 @@ export const RegistrationPage = () => {
               validationSchema={authValidation}
             />
             <StyledFormText>
-              Already have an  account?
-              <StyledSpan>
-                <Link to={paths.LOGIN}>Sign in</Link>
-              </StyledSpan>
+              {
+                isLoading ? <>Loading...</> : <>Already have account ?
+                  <StyledSpan>
+                    <Link to={paths.LOGIN}>Sign in</Link>
+                  </StyledSpan></>
+              }
             </StyledFormText>
           </StyledFormWrapper>
         </StyledFormContainer>

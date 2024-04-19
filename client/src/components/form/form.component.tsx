@@ -44,7 +44,7 @@ export function Form ({ initialValues, fn, validationSchema, formType }: Props) 
         error={formik.errors.password}
       />
       <StyledFormButton type="submit">
-        {formType === "Login" ? "SIgn in" : "Sign Up"}
+        {formType === "Login" ? "Sign in" : "Sign Up"}
       </StyledFormButton>
     </StyledForm>
   );

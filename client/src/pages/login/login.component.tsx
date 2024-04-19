@@ -20,7 +20,7 @@ import { toast } from "react-toastify";
 import { authValidation } from "../../validation";
 import { isErrorWithMessage, isFetchBaseQueryError } from "../../helpers";
 export const LoginPage = () => {
-  const [login] = useLoginMutation()
+  const [login, {isLoading}] = useLoginMutation()
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const handleLogin = async (values: IUser) => {
@@ -54,10 +54,12 @@ export const LoginPage = () => {
               validationSchema={authValidation}
             />
             <StyledFormText>
-              Don`t have account?
-              <StyledSpan>
-                <Link to={paths.REGISTER}>Sign up</Link>
-              </StyledSpan>
+              {
+                isLoading ? <>Loading...</> : <>Don`t have account ?
+                  <StyledSpan>
+                    <Link to={paths.REGISTER}>Sign up</Link>
+                  </StyledSpan></>
+              }
             </StyledFormText>
           </StyledFormWrapper>
         </StyledFormContainer>

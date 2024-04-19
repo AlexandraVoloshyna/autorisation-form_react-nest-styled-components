@@ -12,7 +12,6 @@ export const Layout = () => {
         <Outlet />
         <ToastContainer />
       </main>
-      <footer>footer</footer>
     </Wrapper>
   )
 }
